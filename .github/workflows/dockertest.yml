@@ -1,4 +1,4 @@
-name: push docker image
+name: push docker image transfer
 on: 
   push: 
     branches: 
