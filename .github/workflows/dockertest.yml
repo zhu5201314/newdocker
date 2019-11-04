@@ -16,7 +16,7 @@ jobs:
 
     - name: Build and tag image 
 
-      run: docker build -t "docker.pkg.github.com/zhu5201314/newdocker/docker-learn:$GITHUB_SHA" -f docker-example/DockerFile .
+      run: docker build -t "docker.pkg.github.com/zhuorg/newdocker/docker-learn:$GITHUB_SHA" -f docker-example/DockerFile .
 
     - name: Docker login 
 
@@ -28,4 +28,4 @@ jobs:
 
     - name: Publish to GPR 
 
-      run: docker push "docker.pkg.github.com/zhu5201314/newdocker/docker-learn:$GITHUB_SHA"
+      run: docker push "docker.pkg.github.com/zhuorg/newdocker/docker-learn:$GITHUB_SHA"
