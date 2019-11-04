@@ -1,0 +1,31 @@
+name: push docker image
+on: 
+  push: 
+    branches: 
+    - master
+    paths: 
+    - 'docker-example/*' 
+    - '.github/workflows/dockertest.yml' 
+
+jobs: 
+  build: 
+    runs-on: ubuntu-latest 
+    steps: 
+
+    - uses: actions/checkout@v1 
+
+    - name: Build and tag image 
+
+      run: docker build -t "docker.pkg.github.com/zhu5201314/newdocker/docker-learn:$GITHUB_SHA" -f docker-example/Dockerfile .
+
+    - name: Docker login 
+
+      run: docker login docker.pkg.github.com -u $GITHUB_ACTOR -p $GITHUB_TOKEN 
+
+      env: 
+
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}} 
+
+    - name: Publish to GPR 
+
+      run: docker push "docker.pkg.github.com/zhu5201314/newdocker/docker-learn:$GITHUB_SHA"
