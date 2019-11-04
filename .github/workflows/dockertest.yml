@@ -21,7 +21,7 @@ jobs:
     - name: Push
       run: |
         docker login docker.pkg.github.com -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }}
-        docker push docker.pkg.github.com/zhuorg/newdocker/docker-learn:latest  
+        docker push docker.pkg.github.com/zhuorg/newdocker/docker-learn:$GITHUB_SHA  
 
 #    - name: Docker login 
 
