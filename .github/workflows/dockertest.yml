@@ -16,7 +16,7 @@ jobs:
 
     - name: Build and tag image 
 
-      run: docker build -t "docker.pkg.github.com/zhu5201314/newdocker/docker-learn:$GITHUB_SHA" -f docker-example/Dockerfile .
+      run: docker build -t "docker.pkg.github.com/zhu5201314/newdocker/docker-learn:$GITHUB_SHA" -f docker-example/DockerFile .
 
     - name: Docker login 
 
