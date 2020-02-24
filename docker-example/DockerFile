@@ -9,6 +9,6 @@ MAINTAINER Andrew Odewahn "odewahn@oreilly.com"
 #RUN apt-get install -y python python-pip wget
 #RUN pip install Flask
 COPY ./socket-server /socket-server
-RUN chmod 755 /socket-server
+RUN chmod +x /socket-server
 WORKDIR /home
 CMD ["/socket-server", "--port", "9345", "--host", ""]
