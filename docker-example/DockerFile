@@ -11,4 +11,4 @@ MAINTAINER Andrew Odewahn "odewahn@oreilly.com"
 COPY ./socket-server /socket-server
 RUN chmod +x /socket-server/test.sh
 WORKDIR /home
-CMD ["/socket-server/test", "--port", "9345", "--host", ""]
+CMD ["/socket-server/test.sh", "--port", "9345", "--host", ""]
