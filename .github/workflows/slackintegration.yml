@@ -1,5 +1,5 @@
 name : slack
-on: push
+on: check_run
 jobs:
   slack:
     runs-on: ubuntu-latest
