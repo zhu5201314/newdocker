@@ -12,6 +12,7 @@ jobs:
         name: socket-server1
         path: socket-server
   job2:
+    needs: [job1]
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
