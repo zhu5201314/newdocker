@@ -1,11 +1,6 @@
 name: push docker image transfer
 on: 
-  push: 
-    branches: 
-    - master
-    paths: 
-    - 'docker-example/*' 
-    - '.github/workflows/dockertest.yml' 
+ check_suite:
 
 jobs: 
   build: 
@@ -16,12 +11,13 @@ jobs:
 
     - name: Build and tag image 
 
-      run: docker build -t "docker.pkg.github.com/zhuorg/newdocker/docker-learn:$GITHUB_SHA" -f docker-example/DockerFile .
+      run: docker build -t "docker.pkg.github.com/zhuorg/newdocker/docker-test:$GITHUB_SHA" -f docker-example/DockerFile .
    
-    - name: Push
+    - name: run
       run: |
-        docker login docker.pkg.github.com -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }}
-        docker push docker.pkg.github.com/zhuorg/newdocker/docker-learn:$GITHUB_SHA  
+         docker run docker.pkg.github.com/zhuorg/newdocker/docker-test:$GITHUB_SHA
+    #docker login docker.pkg.github.com -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }}
+    #docker push docker.pkg.github.com/zhuorg/newdocker/docker-learn:$GITHUB_SHA  
 
 #    - name: Docker login 
 
