@@ -1,6 +1,6 @@
 name: push docker image transfer
 on: 
- push:
+ check_suite:
 
 jobs: 
   build: 
