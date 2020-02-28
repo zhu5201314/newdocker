@@ -11,7 +11,7 @@ jobs:
 
     - name: Build and tag image 
 
-      run: docker build -t "docker.pkg.github.com/zhuorg/newdocker/docker-test:$GITHUB_SHA" -f docker-example/DockerFile .
+      run: docker build -t "docker.pkg.github.com/zhuorg/newdocker/docker-test:$GITHUB_SHA" -f .
    
     - name: run
       run: |
