@@ -11,11 +11,11 @@ jobs:
 
     - name: Build and tag image 
 
-      run: docker build -t "docker.pkg.github.com/zhuorg/newdocker/docker-test:$GITHUB_SHA" -f .
+      run: docker build -t "docker.pkg.github.com/zhuorg/newdocker/docker-test:${env:GITHUB_SHA}" -f .
    
     - name: run
       run: |
-         docker run docker.pkg.github.com/zhuorg/newdocker/docker-test:$GITHUB_SHA
+         docker run docker.pkg.github.com/zhuorg/newdocker/docker-test:${env:GITHUB_SHA}
     #docker login docker.pkg.github.com -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }}
     #docker push docker.pkg.github.com/zhuorg/newdocker/docker-learn:$GITHUB_SHA  
 
