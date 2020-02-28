@@ -1,5 +1,5 @@
 name: upload artifacts
-on: push 
+on: check_suite 
 
 jobs:
   job1: 
