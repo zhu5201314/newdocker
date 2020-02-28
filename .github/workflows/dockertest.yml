@@ -11,7 +11,7 @@ jobs:
 
     - name: Build and tag image 
 
-      run: docker build -t "docker.pkg.github.com/zhuorg/newdocker/docker-test:1.0.0" 
+      run: docker build -t "docker.pkg.github.com/zhuorg/newdocker/docker-test:1.0.0" -f Dockerfile .
    
     - name: run
       run: |
